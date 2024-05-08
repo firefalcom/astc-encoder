@@ -259,11 +259,6 @@ macro(astcenc_set_properties ASTCENC_TARGET_NAME ASTCENC_IS_VENEER)
         set_property(TARGET ${ASTCENC_TARGET_NAME}
             PROPERTY
                 INTERPROCEDURAL_OPTIMIZATION_RELEASE True)
-
-        # Use a static runtime on MSVC builds (ignored on non-MSVC compilers)
-        set_property(TARGET ${ASTCENC_TARGET_NAME}
-            PROPERTY
-                MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     endif()
 
     # Set up configuration for SIMD ISA builds
